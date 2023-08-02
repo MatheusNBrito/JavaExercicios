@@ -1,0 +1,36 @@
+/*1. Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e
+mostre-a expressa em dias. Leve em consideração o ano com 365 dias e o mês com 30.
+(Ex: 3 anos, 2 meses e 15 dias = 1170 dias*/
+
+import java.util.Scanner;
+
+public class CalculoDaIdadeEmDias{
+    
+    public static void main(String[] args){
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Qual dia você nasceu?");
+      
+        int dia = scanner.nextInt();
+      
+        System.out.println("Qual mês você nasceu?");
+  
+        int mes = scanner.nextInt();
+      
+        System.out.println("Qual ano você nasceu?");
+ 
+        int ano = scanner.nextInt();
+        scanner.close();
+      
+        int resultadoFinal = idadeEmDias(dia, mes, ano);
+        System.out.println("Idade total em dias: " + resultadoFinal);
+    }
+    
+    static int idadeEmDias(int dia, int mes, int ano){
+        int anoPdia = ano * 365;
+        int mesPdia = mes * 30;
+        
+        int resultadoFinal = anoPdia + mesPdia + dia;
+        return resultadoFinal;
+    }
+}
